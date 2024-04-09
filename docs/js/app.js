@@ -634,17 +634,19 @@
                 if (link) link.addEventListener("click", (function(event) {
                     event.preventDefault();
                     const parentMenuItem = link.closest(".menu-item");
-                    if (currentOpenItem && currentOpenItem !== parentMenuItem) currentOpenItem.classList.remove("_open");
-                    if (currentOpenItem === parentMenuItem && parentMenuItem.classList.contains("_open")) {
-                        parentMenuItem.classList.remove("_open");
-                        currentOpenItem = null;
-                    } else {
-                        parentMenuItem.classList.add("_open");
-                        currentOpenItem = parentMenuItem;
-                    }
                     if (window.innerWidth < 75.061 * parseFloat(getComputedStyle(document.documentElement).fontSize)) {
                         const subMenu = parentMenuItem.querySelector(".sub-menu");
                         _slideToggle(subMenu);
+                        parentMenuItem.classList.toggle("_open");
+                    } else {
+                        if (currentOpenItem && currentOpenItem !== parentMenuItem) currentOpenItem.classList.remove("_open");
+                        if (currentOpenItem === parentMenuItem && parentMenuItem.classList.contains("_open")) {
+                            parentMenuItem.classList.remove("_open");
+                            currentOpenItem = null;
+                        } else {
+                            parentMenuItem.classList.add("_open");
+                            currentOpenItem = parentMenuItem;
+                        }
                     }
                 }));
             }));
