@@ -627,7 +627,20 @@
         function toggleSubMenus() {
             if (window.innerWidth < 75.061 * parseFloat(getComputedStyle(document.documentElement).fontSize)) hideSubMenus(); else showSubMenus();
         }
+        function handleOutsideMenuClick(event) {
+            const isClickInsideMenuContainer = event.target.closest(".menu-container");
+            const isClickInsideMenuItem = event.target.closest(".menu-item");
+            const isClickInsideMenuItemWithChildren = isClickInsideMenuItem && isClickInsideMenuItem.classList.contains("menu-item-has-children");
+            if (!isClickInsideMenuContainer || isClickInsideMenuItem && !isClickInsideMenuItemWithChildren) {
+                closeMenuItems();
+                currentOpenItem = null;
+            }
+        }
         toggleSubMenus();
+        window.addEventListener("resize", (function() {
+            toggleSubMenus();
+            if (window.innerWidth >= 75.061 * parseFloat(getComputedStyle(document.documentElement).fontSize)) document.addEventListener("click", handleOutsideMenuClick); else document.removeEventListener("click", handleOutsideMenuClick);
+        }));
         if (headerMenuItems.length > 0) {
             menuItemsWithChildren.forEach((item => {
                 const link = item.querySelector("a");
@@ -650,15 +663,6 @@
                     }
                 }));
             }));
-            document.addEventListener("click", (function(event) {
-                const isClickInsideMenuContainer = event.target.closest(".menu-container");
-                const isClickInsideMenuItem = event.target.closest(".menu-item");
-                const isClickInsideMenuItemWithChildren = isClickInsideMenuItem && isClickInsideMenuItem.classList.contains("menu-item-has-children");
-                if (!isClickInsideMenuContainer || isClickInsideMenuItem && !isClickInsideMenuItemWithChildren) {
-                    closeMenuItems();
-                    currentOpenItem = null;
-                }
-            }));
             document.addEventListener("keydown", (function(event) {
                 if (event.key === "Escape") {
                     closeMenuItems();
@@ -666,9 +670,6 @@
                 }
             }));
         }
-        window.addEventListener("resize", (function() {
-            toggleSubMenus();
-        }));
     }));
     window["FLS"] = false;
     isWebp();
