@@ -175,6 +175,7 @@
             filter: invert(84%) sepia(45%) saturate(1446%) hue-rotate(353deg) brightness(95%) contrast(104%);
           }
         }
+
       }
     }
     // .menu__link
@@ -223,11 +224,7 @@
           width: 100%;
           height: 0%;
           background-color: #70000E;
-          transition: width .75s ease, height .75s ease;
-        }
-
-        ._open & {
-          
+          transition: width .65s ease, height .65s ease;
         }
       }
       @media (max-width: toEm(1200.98)){
