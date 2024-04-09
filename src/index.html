@@ -7,9 +7,60 @@
 		<div class="wrapper pg-home">
 			@@include('html/_header.htm',{})
 			<main class="page">
-
-				<div class="page__container">
-					
+				<div class="hero">
+					<div class="hero__container">
+						<h1 class="hero__title">
+							Київський Національний Університет Театру, Кіно і Телебачення
+							<span>іменi І. К. Карпенка-Карого</span>
+						</h1>
+					</div>
+					<div class="hero__slider swiper">
+						<div class="hero__wrapper swiper-wrapper">
+							<div class="hero__slide swiper-slide">
+								<picture>
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.webp" type="image/webp" width="1920" height="800">
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.jpg" type="image/jpeg" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.webp" type="image/webp" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.jpg" type="image/jpeg" width="1920" height="800">
+									<img class="hero__slide-img ibg" src="img/home/slider/people-01.jpg" alt="изображения" width="1920" height="800">
+								</picture>
+							</div>
+							<div class="hero__slide swiper-slide">
+								<picture>
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.webp" type="image/webp" width="1920" height="800">
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.jpg" type="image/jpeg" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.webp" type="image/webp" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.jpg" type="image/jpeg" width="1920" height="800">
+									<img class="hero__slide-img ibg" src="img/home/slider/people-01.jpg" alt="изображения" width="1920" height="800">
+								</picture>
+							</div>
+							<div class="hero__slide swiper-slide">
+								<picture>
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.webp" type="image/webp" width="1920" height="800">
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.jpg" type="image/jpeg" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.webp" type="image/webp" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.jpg" type="image/jpeg" width="1920" height="800">
+									<img class="hero__slide-img ibg" src="img/home/slider/people-01.jpg" alt="изображения" width="1920" height="800">
+								</picture>
+							</div>
+							<div class="hero__slide swiper-slide">
+								<picture>
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.webp" type="image/webp" width="1920" height="800">
+									<source media="(max-width: 30.06125em)" srcset="img/home/slider/people-01-mob.jpg" type="image/jpeg" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.webp" type="image/webp" width="1920" height="800">
+									<source srcset="img/home/slider/people-01.jpg" type="image/jpeg" width="1920" height="800">
+									<img class="hero__slide-img ibg" src="img/home/slider/people-01.jpg" alt="изображения" width="1920" height="800">
+								</picture>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+						<button type="button" class="hero__slider-btn swiper-button-prev">
+							<img src="@img/icons/arr-right.svg" width="15" height="16" alt="стрілочка вліво">
+						</button>
+						<button type="button" class="hero__slider-btn swiper-button-next">
+							<img src="@img/icons/arr-right.svg" width="15" height="16" alt="стрілочка вправо">
+						</button>
+					</div>
 				</div>
 			</main>
 			@@include('html/_footer.htm',{})

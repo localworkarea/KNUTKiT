@@ -1,3 +1,38 @@
-//====================================================================================================
-
-//====================================================================================================
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  // .hero__container
+  &__container {
+  }
+  // .hero__title
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  // .hero__slider
+  &__slider {
+    width: 100%;
+   height: 100%;
+  }
+  // .hero__wrapper
+  &__wrapper {
+  }
+  // .hero__slide
+  &__slide {
+  }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.swiper-pagination {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}

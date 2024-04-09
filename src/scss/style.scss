@@ -43,10 +43,10 @@ $minWidth: 320;
 // Ширина полотна (макету)
 $maxWidth: 1920;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1720;
+$maxWidthContainer: 1760;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
+$containerPadding: 40;
 
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -109,7 +109,6 @@ body {
 
 [class*="__container"] {
 	@include adaptiveValue("max-width", 1760, 1240,0,1920,1366.98);
-	// @include adaptiveValue("max-width", 1100, 1030,3,1366.98,1280);
 	margin: 0 auto;
 	padding-left: toRem(20);
 	padding-right: toRem(20);
