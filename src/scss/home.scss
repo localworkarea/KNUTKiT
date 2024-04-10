@@ -632,3 +632,41 @@
     }
   }
 }
+
+
+// ===  HOME-PARTNERS - SECTION ===================================================================
+.home-partners {
+  @extend %paddingSections;
+  // .home-partners__container
+  &__container {
+  }
+  // .home-partners__main-title
+  &__main-title {
+  }
+  // .home-partners__list
+  &__list {
+    display: grid;
+    @include adaptiveValue("gap", 40, 20,0,1920,1366.98);
+    
+    @media (min-width:$tablet){
+      grid-template-columns: repeat(8,auto);
+    }
+    @media (max-width:$tablet) and (min-width: $mobileSmall){
+      grid-template-columns: repeat(4,auto);
+    }
+    @media (max-width:$mobileSmall){
+      grid-template-columns: repeat(2,auto);
+    }
+  }
+  // .home-partners__item
+  &__item {
+    @media (min-width:$mobileSmall){
+      height: toRem(73);
+      padding: toRem(5) 0;
+    }
+    @media (max-width:$mobileSmall){
+       height: toRem(100); 
+       padding: toRem(25) toRem(20);
+    }
+  }
+}

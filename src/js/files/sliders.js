@@ -50,7 +50,7 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			//autoHeight: true,
-			speed: 800,
+			speed: 1500,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
