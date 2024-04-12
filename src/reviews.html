@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="uk">
+	@@include('html/_head.htm',{
+	"title":"КНУТКіТ | HOME"
+	})
+	<body>
+		<div class="wrapper pg">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="head-pg">
+					<picture>
+						<source media="(max-width: 30.06125em)" srcset="img/head/bg-head-mob.webp" type="image/webp" width="1920" height="340">
+						<source media="(max-width: 30.06125em)" srcset="img/head/bg-head-mob.jpg" type="image/jpeg" width="1920" height="340">
+						<source srcset="img/head/bg-head.webp" type="image/webp" width="1920" height="340">
+						<source srcset="img/head/bg-head.jpg" type="image/jpeg" width="1920" height="340">
+						<img class="head-pg__img ibg" src="img/head/bg-head.jpg" alt="на сцені виступають люди, видно тільки їх образ в темних тонах" width="1920" height="340">
+					</picture>
+					<div class="head-pg__container">
+						<div class="head-pg__navigation">
+							<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="head-pg__list">
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="head-pg__item">
+									<a itemprop="item"  href="index.html">
+										<img src="@img/icons/home.svg" width="16" height="16" alt="іконка дім">
+										<span itemprop="name">Головна</span>
+									</a>
+									<meta itemprop="position" content="1" />
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="head-pg__item">
+									<a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="https://example.com/books/sciencefiction" href="index.html">
+										<span itemprop="name">Про нас</span>
+									</a>
+									<meta itemprop="position" content="2" />
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="head-pg__item">
+									<span itemprop="name">Команда</span>
+									<meta itemprop="position" content="3" />
+								</li>
+							</ol>
+						</div>
+						<div class="head-pg__body">
+							<div class="head-pg__name">Про нас</div>
+							<h1 class="head-pg__title">Факультет театрального мистецтва</h1>
+						</div>
+					</div>
+				</div>
+				<div class="main__container">
+					<aside class="main__nav nav">
+						<nav class="nav__item">
+							<ul id="aside-menu" class="menu">
+								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children current-menu-parent">
+									<a href="#">
+										Візитівка
+									</a>
+									<ul class="sub-menu">
+										<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
+											<a href="#">
+												Загальна інформація
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Історія університету
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Символіка, місія та візія
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Сторінка Карпенка-Карого
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Стратегія розвитку
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												План роботи Університету
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Звіт про роботу Університету
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Структура управління
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Галерея
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-item menu-item-type-custom menu-item-object-custom">
+									<a href="#">
+										Команда
+									</a>
+								</li>
+								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+									<a href="#">
+										Вчена рада
+									</a>
+									<ul class="sub-menu">
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Про Вчену раду
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Положення
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Склад
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="#">
+												Матеріали засідань Вченої ради
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</aside>
+					<section class="main__body">
+						<div class="main__wrapper">
+							<div class="card-wrapper-three">
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+								<blockquote class="card-review">
+									<div class="card-review__header">
+										<div class="card-review__img">
+											<img class="ibg" src="@img/reviews/people.jpg" width="75" height="75" alt="Image">
+										</div>
+										<div class="card-review__block">
+											<cite class="card-review__name">Валерія</cite>
+											<p class="card-review__time">
+												<time datetime="2023-04-15">
+													06 серпня 2023 року
+												</time>
+											</p>
+										</div>
+									</div>
+									<p class="card-review__review">
+										Констатуємо факти безпосередньо нашого знайомства з КНУТКІТ. Вся інформація щодо  організаційних питань проведення творчих конкурсів, їх результатів постійно оновлювалась на сайті ВНЗ. Викладачі горять справою свого життя - це відчувається. Зв'язок з приймальною комісією - оперативно,чітко, невимушено
+									</p>
+								</blockquote>
+							</div>
+							<div class="cards-button__wrapper">
+								<a href="#" class="cards-button__btn btn btn--01">
+									Більше відгуків
+								</a>
+							</div>
+						</div>
+					</section>
+				</div>
+				<section class="review bg-yellow-lgt">
+					<div class="review__container">
+						<div class="review__wrapper">
+							<h2 class="review__title title-three">
+								Залишити відгук
+							</h2>
+							<form data-dev data-popup-message="#message-sent" class="review__form form-review" action="#" method="POST">
+								<div class="form-review__item">
+									<input type="text" name="name" placeholder="Ваше ім'я" class="form-review__input input" data-error="Обов'язкове поле"  data-required>
+								</div>
+								<div class="form-review__item">
+									<input type="email" name="email" placeholder="Ваш e-mail" class="form-review__input input" data-error="Обов'язкове поле"  data-required="email">
+								</div>
+								<div class="form-review__item">
+									<textarea name="message" class="form-review__textarea input" placeholder="Текст відгуку"  data-error="Обов'язкове поле"  data-required></textarea>
+								</div>
+								<button type="submit" class="form-review__btn btn btn--02">
+									Надіслати відгук
+								</button>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup-msg.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

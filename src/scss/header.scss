@@ -156,9 +156,7 @@
           @include adaptiveValue("font-size", 18, 14,2,1920,1200.98);
           font-weight: 500;
           gap: toRem(5);
-          // img {
-          //   filter: invert(98%) sepia(1%) saturate(269%) hue-rotate(40deg) brightness(121%) contrast(99%);
-          // }
+       
           &::after {
             content: '';
             background-image: url('../img/icons/arr-dwn.svg');
@@ -170,13 +168,6 @@
           }
           @media (max-width: toEm(1200.98)) {
             justify-content: space-between;
-          }
-        }
-      }
-      &.menu-item-06  {
-        > a {
-          &::after {
-            display: none;
           }
         }
       }
@@ -200,55 +191,6 @@
         }
 
       }
-    }
-    // .menu-item {
-    //   &.menu-item-has-children > a {
-    //     position: relative;
-    //     display: flex;
-    //     align-items: center;
-    //     @include adaptiveValue("font-size", 18, 14,2,1920,1200.98);
-    //     font-weight: 500;
-    //     gap: toRem(5);
-    //     // img {
-    //     //   filter: invert(98%) sepia(1%) saturate(269%) hue-rotate(40deg) brightness(121%) contrast(99%);
-    //     // }
-    //     &::after {
-    //       content: '';
-    //       background-image: url('../img/icons/arr-dwn.svg');
-    //       background-size: contain;
-    //       width: toRem(16);
-    //       height: toRem(16);
-    //       filter: invert(98%) sepia(1%) saturate(269%) hue-rotate(40deg) brightness(121%) contrast(99%);
-    //       transition: transform .45s ease;
-    //     }
-    //     @media (max-width: toEm(1200.98)) {
-    //       justify-content: space-between;
-    //     }
-    //   }
-    // } 
-    // .menu__link
-    &__link {
-      // position: relative;
-      // display: flex;
-      // align-items: center;
-      // @include adaptiveValue("font-size", 18, 14,2,1920,1200.98);
-      // font-weight: 500;
-      // gap: toRem(5);
-      // // img {
-      // //   filter: invert(98%) sepia(1%) saturate(269%) hue-rotate(40deg) brightness(121%) contrast(99%);
-      // // }
-      // &::after {
-      //   content: '';
-      //   background-image: url('../img/icons/arr-dwn.svg');
-      //   background-size: contain;
-      //   width: toRem(16);
-      //   height: toRem(16);
-      //   filter: invert(98%) sepia(1%) saturate(269%) hue-rotate(40deg) brightness(121%) contrast(99%);
-      //   transition: transform .45s ease;
-      // }
-      // @media (max-width: toEm(1200.98)) {
-      //   justify-content: space-between;
-      // }
     }
 
     .sub-menu {

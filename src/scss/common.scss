@@ -20,6 +20,15 @@
   line-height: 1.2;
 }
 
+.title-three {
+  font-size: toRem(40);
+  font-family: "Alumni Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $red;
+  @include adaptiveValue("margin-bottom", 20, 12,0,1920,1366.98);
+}
+
 %paddingSections {
   @include adaptiveValue("padding-top", 100, 60,0,1920,1366.98);
   @include adaptiveValue("padding-bottom", 100, 60,0,1920,1366.98);
@@ -32,6 +41,9 @@
 }
 .bg-yellow {
   background-color: $yellow;
+}
+.bg-yellow-lgt {
+  background-color: rgba(248, 203, 2, 0.1);
 }
 
 .btn {
@@ -174,7 +186,7 @@
       border: toRem(2) solid $red;
       height: 100%;
       width: 100%;
-      transition: box-shadow .45s ease, border-color .3s ease;
+      transition: box-shadow .45s ease, border-color .3s ease ;
     
       @media (any-hover: hover){
         &:hover{
@@ -255,3 +267,745 @@
         }
       }
     }
+
+
+// === HEADER шаблон для всех страниц ===========================================
+.head-pg {
+  position: relative;
+  // .head-pg__img
+  &__img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    object-position: top;
+    @media (min-width:$mobileSmall){
+      aspect-ratio: 1920/340;
+    }
+    @media (max-width:$mobileSmall){
+      aspect-ratio: 390/165;
+    }
+  }
+  // .head-pg__container
+  &__container {
+    position: relative;
+    z-index: 1;
+    @include adaptiveValue("min-height", 340, 240,2,1920,1366.98);
+    @include adaptiveValue("min-height", 240, 165,3,1366.98,480.98);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(12);
+
+    @include adaptiveValue("padding-top", 100, 70,0,1920,1280.98);
+    @media (max-width: toEm(750.98)){
+        padding-top: toRem(60) !important;
+    }
+  }
+	// .head-pg__navigation
+	&__navigation {
+    @include adaptiveValue("margin-top", 15,10,0,1366.98,480.98 );
+    flex: 1;
+	}
+  // .head-pg__list
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: toRem(5);
+  }
+  // .head-pg__item
+  &__item {
+    list-style: none;
+    @include adaptiveValue("font-size", 14, 12,0,1366.98,480.98);
+    color: rgba(255, 255, 255, 0.2);
+    transition: color .3s ease;
+    &:first-child {
+      a {
+        img {
+          @media (min-width:$mobileSmall){
+             display: none; 
+          }
+          @media (max-width:$mobileSmall){
+             display: block; 
+          }
+        }
+        span {
+          @media (min-width:$mobileSmall){
+             display: block; 
+          }
+          @media (max-width:$mobileSmall){
+             display: none; 
+          }
+        }
+      }
+    }
+    &:not(:last-child) {
+      @media (any-hover: hover){
+        &:hover{
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+      @media (min-width:$mobileSmall){
+        margin-right: toRem(5);
+      }
+      @media (max-width:$mobileSmall){
+        margin-right: toRem(2);
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      @media (min-width:$mobileSmall){
+         gap: toRem(5); 
+      }
+      @media (max-width:$mobileSmall){
+         gap: toRem(2); 
+      }
+      &::after {
+        content:'';
+        background-image: url('../img/icons/arr-right-sm.svg');
+        width: toRem(12);
+        height: toRem(12);
+        background-size: contain;
+      }
+    }
+  }
+  // .head-pg__body
+  &__body {
+    @include adaptiveValue("font-size", 58, 30,0,1920,480.98);
+    font-family: "Alumni Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    color: $mainWhite;
+    font-weight: 700;
+    display: flex;
+    @include adaptiveValue("column-gap", 30, 20,0,1920,1366.98);
+  }
+  // .head-pg__name
+  &__name {
+    @include adaptiveValue("width", 407, 300,2,1920,1366.98);
+    @include adaptiveValue("width", 300, 250,3,1366.98,950.98);
+    background-color: $red;
+    border-top-left-radius: toRem(26);
+    border-top-right-radius: toRem(26);
+    @include adaptiveValue("padding", 30, 20,0,1920,1366.98);
+    @media (max-width: toEm(800.98)){
+        display: none;
+    }
+  }
+  // .head-pg__title
+  &__title {
+    @include adaptiveValue("padding-top", 30, 20,0,1920,1366.98);
+    @include adaptiveValue("padding-bottom", 30, 20,0,1920,1366.98);
+    @media (max-width:$mobileSmall){
+       padding-bottom: toRem(10) !important; 
+    }
+  }
+}
+
+
+// === РАЗМЕТКА шаблон для всех страниц ===========================================
+.main {
+  // .main__container
+  &__container {
+    display: grid;
+    @include adaptiveValue("column-gap", 30, 20,0,1920,1366.98);
+    @media (min-width:toEm(800.98)){
+      grid-template-columns: auto 1fr;
+    }
+    @media (max-width:toEm(800.98)){
+      grid-template-columns: 100%;
+    }
+  }
+  // .main__nav
+  &__nav {
+  }
+  // .main__body
+  &__body {
+    min-width: 0;
+    @include adaptiveValue("padding-top", 30, 20,0,1920,1366.98);
+    @include adaptiveValue("padding-bottom", 100, 60,0,1920,1366.98);
+  }
+  // .main__wrapper
+  &__wrapper {
+    width: 100%;
+  }
+}
+
+// == СТИЛИ ДЛЯ КАСТОМНЫХ ЭЛЕМЕНТОВ СТРАНИЦ ======================
+.article-styles {
+  h1,h2,h3,h4,h5,h6 {
+    @include adaptiveValue("margin-bottom", 20, 12,0,1920,1366.98);
+  }
+  p,
+  figure,
+  ul, ol {
+    @include adaptiveValue("margin-bottom", 16, 12,0,1920,1366.98);
+  }
+  ul li,
+  ol li, a {
+    @include adaptiveValue("margin-bottom", 10, 8,0,1920,1366.98);
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-size: toRem(40);
+    font-family: "Alumni Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $red;
+  }
+  p, ul li, ol li, a {
+    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  ul li {
+    padding-left: toRem(27);
+    position: relative;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: toRem(5);
+      left: toRem(5);
+      width: toRem(10);
+      height: toRem(10);
+      border-radius: toRem(3);
+      background-color: $yellow;
+    }
+  }
+  ol li {
+    padding-left: toRem(27);
+  }
+  ol {
+    list-style-type: none;
+    counter-reset: item;
+    li {
+      position: relative;
+      &:before {
+        counter-increment: item;
+        content: counter(item) ".";
+        position: absolute;
+        left: toRem(5);
+        @include adaptiveValue("top", 5, 3,0,1920,1366.98);
+        @include adaptiveValue("font-size", 16, 14,0,1920,1366.98);
+      }
+    }
+  }
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color .3s ease;
+    &:hover {
+      color: $redDark;
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto; 
+    @include adaptiveValue("margin-top", 20, 16,0,1920,1366.98);
+    @include adaptiveValue("margin-bottom", 20, 16,0,1920,1366.98);
+    @media (min-width:$mobileSmall){
+      border-radius: toRem(26);
+    }
+    @media (max-width:$mobileSmall){
+      border-radius: toRem(20);
+    }
+  }
+  figure {
+    img {
+      @include adaptiveValue("margin-bottom", 10, 8,0,1920,1366.98);
+    }
+  }
+  figcaption {
+    text-align: center;
+    @include adaptiveValue("font-size", 16, 14,0,1920,1366.98);
+    opacity: 0.9;
+  }
+}
+
+// на 1206рх оба контейнеры будут мак. 846рх
+.container-min {
+  max-width: toRem(846);
+}
+.container-full {
+}
+
+.nav {
+  @include adaptiveValue("width", 407, 300,2,1920,1366.98);
+  @include adaptiveValue("width", 300, 250,3,1366.98,950.98);
+  @media (min-width:toEm(800.98)){
+    padding-bottom: toRem(30);
+  }
+  @media (max-width: toEm(800.98)){
+    width: 100% !important;
+  }
+  // .nav__item
+  &__item {
+    border-end-end-radius: toRem(26);
+    border-end-start-radius: toRem(26);
+    overflow: hidden;
+    @media (min-width:toEm(800.98)){
+      background-color: $gray;
+    }
+    @media (max-width: toEm(800.98)){
+        margin-left: toRem(-20);
+        margin-right: toRem(-20);
+    }
+    .menu {
+      .menu-item {
+        transition: background-color .3s ease;
+        &._open {
+          > a {
+            &::after {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+        @media (any-hover: hover){
+          &:hover{
+            a {
+              background-color: #d8d8d8;
+            }
+            .sub-menu {
+              background-color: #d8d8d8;
+            }
+          }
+        }
+        a {
+          @include adaptiveValue("font-size", 18, 14,0,1920,1200.98);
+          width: 100%;
+          padding-top: toRem(26);
+          padding-bottom: toRem(26);
+          font-weight: 500;
+          transition: background-color .3s ease;
+          background-color: $gray;
+          
+          @media (any-hover: hover){
+            &:hover{
+              // background-color: #c29e00;
+            }
+          }
+       
+          @media (min-width:toEm(800.98)){
+            padding-left: toRem(26);
+            padding-right: toRem(26);
+          }
+          @media (max-width: toEm(800.98)){
+            padding-left: toRem(20);
+            padding-right: toRem(20);
+          }
+        }
+        @media (max-width: toEm(800.98)){
+          display: none;
+        }
+        &.menu-item-has-children {
+          a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: toRem(5);
+            justify-content: space-between;
+         
+            &::after {
+              content: '';
+              background-image: url('../img/icons/arr-dwn.svg');
+              background-size: contain;
+              width: toRem(16);
+              height: toRem(16);
+              filter: invert(0%) sepia(4%) saturate(7483%) hue-rotate(243deg) brightness(100%) contrast(106%);
+              transition: transform .3s ease, opacity .3s ease;
+            }
+            
+          }
+        }
+        // если есть сабменю, то к menu-item будет добавлено активній класс current-menu-parent
+        &.current-menu-parent {
+          > a {
+            font-weight: 700;
+            background-color: $yellow ;
+          }
+          .sub-menu {
+            background-color: $yellowLight;
+            a {
+              background-color: $yellowLight ;
+              @media (any-hover: hover){
+                &:hover{
+                  background-color: $yellowLight !important;
+                }
+              }
+            }
+          }
+          @media (max-width: toEm(800.98)){
+            display: block;
+          }
+        }
+
+        // Если это активный пункт который не имеет без подменю
+        &.current-menu-item {
+          a {
+            background-color: $yellow;
+          }
+        }
+        
+      }
+    }
+    .sub-menu {
+      transition: background-color .3s ease;
+      @media (min-width:toEm(800.98)){
+        padding-top: toRem(26);
+        padding-bottom: toRem(26);
+      }
+      @media (max-width: toEm(800.98)){
+        padding-top: toRem(20);
+        padding-bottom: toRem(20);
+      }
+      .menu-item {
+        a {
+          font-weight: 400;
+          padding-top: toRem(0);
+          padding-bottom: toRem(10);
+          position: relative;
+          justify-content: flex-start !important;
+          transition: opacity .3s ease, background-color .3s ease;
+          &::after {
+            opacity: 0;
+            transform: rotate(-90deg);
+          }
+          @media (any-hover: hover){
+            &:hover{
+              background-color:#d8d8d8;
+              opacity: 0.7;
+              &::after {
+                opacity: 1;
+                transform: rotate(-90deg) translateY(toRem(15));
+              }
+            }
+          }
+        }
+        &:last-child {
+          a {
+            padding-bottom: 0;
+          }
+        }
+        @media (max-width: toEm(800.98)){
+          display: block;
+        }
+        // если это активный пункты подменю
+        &.current-menu-item {
+          a {
+            font-weight: 700;
+          }
+        }
+      }
+      
+      &.current-menu-item {
+          
+      }
+    }
+
+
+  }
+}
+
+
+
+%beforeQube {
+  position: relative; 
+  &::before {
+    content: '';
+    position: absolute;
+    @include adaptiveValue("top", -12.5, -10,0,1920,1366.98);
+    @include adaptiveValue("left", 30, 16,0,1920,1366.98);
+    @include adaptiveValue("width", 25, 20,0,1920,1366.98);
+    @include adaptiveValue("height", 25, 20,0,1920,1366.98);
+    border-radius: toRem(6);
+    background-color: $yellow;
+    transition: background-color .3s ease;
+  }
+}
+
+.card-wrapper-three {
+  display: grid;
+  @include adaptiveValue("gap", 30, 12,0,1920,1366.98);
+  // &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 40, 30,0,1920,1366.98);
+  // }
+  @media (min-width:$tablet){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width:$tablet) and (min-width: $mobileSmall){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width:$mobileSmall){
+     gap: toRem(20) !important; 
+  }
+}
+
+// CARD-PERSON =================================================
+.card-person {
+  &.card-big {
+    display: grid;
+    border-color: $red;
+    &:not(:last-child) {
+      margin-bottom: toRem(60);
+    }
+    @media (min-width:$mobileSmall){
+      grid-template-columns: 50% 50%;
+    }
+    .card-person__img {
+      img {
+        @media (min-width:$mobileSmall){
+           aspect-ratio: 641/750; 
+        }
+      }
+    }
+    .card-person__footer {
+      background-color: $red;
+      color: $mainWhite;
+      p {
+        max-width: toRem(430);
+      }
+      &::before {
+        top: toRem(100);
+        @include adaptiveValue("left", -12.5, -10,0,1920,1366.98);
+        @media (max-width:$mobileSmall){
+           top: toRem(-10); 
+           left: toRem(16);
+        }
+      }
+      @media (min-width:$tablet){
+        padding: 50px !important;
+      }
+      @media (max-width:$tablet) and (min-width: $mobileSmall){
+         padding: toRem(30) !important; 
+      }
+    }
+  }
+ 
+  border: toRem(2) solid #E8E8E8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media (min-width:$mobileSmall){
+    border-radius: toRem(26);
+  }
+  @media (max-width:$mobileSmall){
+    border-radius: toRem(20);
+  }
+  // .card-person__img
+  &__img {
+    overflow: hidden;
+    img {
+      @media (min-width:$mobileSmall){
+         aspect-ratio: 408/540; 
+      }
+      @media (max-width:$mobileSmall){
+         aspect-ratio: 350/460; 
+      }
+    }
+  }
+  // .card-person__footer
+  &__footer {
+    flex: 1;
+    @include adaptiveValue("padding", 30, 16,0,1920,1366.98);
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(15);
+    @extend %beforeQube;
+  }
+  // .card-person__name
+  &__name {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 22, 18,0,1920,1366.98);
+  }
+  // .card-person__position
+  &__position {
+    flex: 1;
+    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+  }
+  // .card-person__number
+  &__number {
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+    font-size: toRem(16);
+    img {
+      width: toRem(20);
+      height: auto;
+    }
+  }
+}
+
+
+.card-one {
+  @extend %cardWrapper;
+  border-color: #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  @media (any-hover: hover){
+    &:hover{
+      border-color: $red;
+      box-shadow: 0px 5px 30px 0px rgba(139, 1, 19, 0.3);
+      .card-one__footer {
+        &::before {
+          background-color: $red;
+        }
+      }
+    }
+  }
+  // .card-one__img
+  &__img {
+    img {
+      aspect-ratio: 406/346;
+    }
+  }
+  // .card-one__footer
+  &__footer {
+    position: relative;
+    @extend %beforeQube;
+    @include adaptiveValue("padding-top", 44, 28,0,1920,1366.98);
+    @include adaptiveValue("padding-bottom", 44, 18,0,1920,1366.98);
+    @include adaptiveValue("padding-left", 30, 18);
+    @media (min-width:toEm(850.98)){
+      padding-right: toRem(50);
+    }
+    @media (max-width: toEm(850.98)){
+      padding-right: toRem(18);
+    }
+  }
+  // .card-one__title
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 24, 20,0,1920,1366.98);
+    span {
+      color: $red;
+    }
+  }
+  // .card-one__arrow
+  &__arrow {
+  }
+}
+
+.cards-button {
+  // .cards-button__wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    @include adaptiveValue("margin-bottom", 30, 20,0,1920,1366.98);
+  }
+  // .cards-button__btn
+  &__btn {
+    max-width: toRem(408);
+  }
+}
+
+
+.card-review {
+  border-radius: toRem(26);
+  overflow: hidden;
+  border: toRem(2) solid #E8E8E8;
+  // .card-review__header
+  &__header {
+    background-color: $gray;
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap", 20, 14,0,1920,1366.98);
+    padding: toRem(18);
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      right: toRem(16);
+      transform: translateY(-50%);
+      background-image: url('../img/icons/quote.svg');
+      background-size: contain;
+      @media (min-width:$mobileSmall){
+         width: toRem(49);
+          height: toRem(47);
+      }
+      @media (max-width:$mobileSmall){
+         width: toRem(42);
+          height: toRem(40);
+      }
+    }
+  }
+  // .card-review__img
+  &__img {
+    @include adaptiveValue("width", 75, 60,0,1920,1366.98);
+    @include adaptiveValue("height", 75, 60,0,1920,1366.98);
+    border-radius: toRem(16);
+    overflow: hidden;
+  }
+  // .card-review__block
+  &__block {
+    position: relative;
+    z-index: 1;
+  }
+  // .card-review__name
+  &__name {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 22, 18,2,1920,1366.98);
+    @include adaptiveValue("font-size", 18, 16,3,1366.98,480.98);
+    margin-bottom: toRem(6);
+  }
+  // .card-review__time
+  &__time {
+    color:rgba(0, 0, 0, 0.3);
+    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+  }
+  // .card-review__review
+  &__review {
+    @include adaptiveValue("padding", 28, 18,0,1920,1366.98);
+    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+  }
+}
+
+
+// == GALLERY ELEMENTS ==========================================
+.gallery {
+  // .gallery__image
+  &__image {
+    position: relative; 
+    overflow: hidden;
+    border-radius: toRem(14);
+    @media (any-hover: hover){
+      &:hover{
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-image: url('../img/icons/more.svg');
+      background-size: contain;
+      width: toRem(70);
+      height: toRem(70);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .45s ease;
+      .touch & {
+        opacity: 1;
+      }
+    }
+  }
+  // .gallery__preview
+  &__preview {
+    position: relative;
+    z-index: 0;
+    border-radius: toRem(14);
+  }
+}
+
