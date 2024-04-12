@@ -1930,6 +1930,10 @@ body::after {
           filter: contrast(1);
 }
 
+.video-glr__slide button {
+  outline: none;
+}
+
 .video-glr__slide img {
   width: 100%;
   height: auto;

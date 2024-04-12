@@ -837,6 +837,9 @@
     &.swiper-slide-active {
       filter: contrast(1);
     }
+    button {
+      outline: none;
+    }
     img {
       width: 100%;
       height: auto;
