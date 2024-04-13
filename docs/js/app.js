@@ -6237,9 +6237,14 @@ PERFORMANCE OF THIS SOFTWARE.
         const navItemSubMenu = document.querySelectorAll(".nav__item .sub-menu");
         const navItemMenuMenuItem = document.querySelectorAll(".nav__item .menu > .menu-item");
         const navItemMenuChildren = document.querySelectorAll(".nav__item .menu-item.menu-item-has-children");
+        const navItemMenuActive = document.querySelectorAll(".nav__item .menu-item.menu-item-has-children.current-menu-parent");
         function hideSubMenusNavItem() {
             navItemSubMenu.forEach((subMenu => {
                 subMenu.setAttribute("hidden", true);
+            }));
+            navItemMenuActive.forEach((item => {
+                const subMenu = item.querySelector(".sub-menu");
+                if (subMenu && window.innerWidth >= 50.061 * parseFloat(getComputedStyle(document.documentElement).fontSize)) subMenu.removeAttribute("hidden");
             }));
         }
         const subMenus = document.querySelectorAll(".menu-container .sub-menu");

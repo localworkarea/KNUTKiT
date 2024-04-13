@@ -525,6 +525,7 @@
     opacity: 0.9;
   }
 }
+.has-knutkt-color { color: #8b0113; }
 
 // на 1206рх оба контейнеры будут мак. 846рх
 .container-min {
@@ -583,12 +584,6 @@
           transition: background-color .3s ease;
           background-color: $gray;
           
-          @media (any-hover: hover){
-            &:hover{
-              // background-color: #c29e00;
-            }
-          }
-       
           @media (min-width:toEm(800.98)){
             padding-left: toRem(26);
             padding-right: toRem(26);
@@ -623,14 +618,23 @@
         }
         // если есть сабменю, то к menu-item будет добавлено активній класс current-menu-parent
         &.current-menu-parent {
+          background-color: $yellowLight !important;
+          @media (any-hover: hover){
+            &:hover{
+              background-color: $yellowLight !important;
+              > a {
+                background-color: $yellow !important;
+              }
+            }
+          }
           > a {
             font-weight: 700;
             background-color: $yellow ;
           }
           .sub-menu {
-            background-color: $yellowLight;
+            background-color: $yellowLight !important;
             a {
-              background-color: $yellowLight ;
+              background-color: $yellowLight !important;
               @media (any-hover: hover){
                 &:hover{
                   background-color: $yellowLight !important;

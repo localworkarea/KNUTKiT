@@ -767,6 +767,10 @@ body::after {
   opacity: 0.9;
 }
 
+.has-knutkt-color {
+  color: #8b0113;
+}
+
 .container-min {
   max-width: 52.875rem;
 }
@@ -826,17 +830,21 @@ body::after {
   transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+.nav__item .menu .menu-item.current-menu-parent {
+  background-color: #FFEFAE !important;
+}
+
 .nav__item .menu .menu-item.current-menu-parent > a {
   font-weight: 700;
   background-color: #F8CA02;
 }
 
 .nav__item .menu .menu-item.current-menu-parent .sub-menu {
-  background-color: #FFEFAE;
+  background-color: #FFEFAE !important;
 }
 
 .nav__item .menu .menu-item.current-menu-parent .sub-menu a {
-  background-color: #FFEFAE;
+  background-color: #FFEFAE !important;
 }
 
 .nav__item .menu .menu-item.current-menu-item a {
@@ -7263,6 +7271,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .nav__item .menu .menu-item:hover .sub-menu {
     background-color: #d8d8d8;
+  }
+
+  .nav__item .menu .menu-item.current-menu-parent:hover {
+    background-color: #FFEFAE !important;
+  }
+
+  .nav__item .menu .menu-item.current-menu-parent:hover > a {
+    background-color: #F8CA02 !important;
   }
 
   .nav__item .menu .menu-item.current-menu-parent .sub-menu a:hover {
