@@ -803,6 +803,10 @@
   &__img {
     overflow: hidden;
     img {
+      .article-styles & {
+        margin: unset ;
+        border-radius: 0;
+      }
       @media (min-width:$mobileSmall){
          aspect-ratio: 408/540; 
       }
@@ -822,27 +826,39 @@
   }
   // .card-person__name
   &__name {
-    font-weight: 700;
-    @include adaptiveValue("font-size", 22, 18,0,1920,1366.98);
+    &:not(.article-styles) {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 22, 18,0,1920,1366.98);
+      margin: unset;
+    }
   }
   // .card-person__position
   &__position {
-    flex: 1;
-    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+    &:not(.article-styles) {
+      flex: 1;
+      @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+      margin: unset;
+    }
   }
   // .card-person__number
   &__number {
-    display: flex;
-    align-items: center;
-    gap: toRem(5);
-    font-size: toRem(16);
-    img {
-      width: toRem(20);
-      height: auto;
+    &:not(.article-styles) {
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+      font-size: toRem(16);
+      text-decoration: none;
+      font-weight: 400 ;
+      margin: unset ;
+      img {
+        width: toRem(20);
+        height: auto;
+        margin: unset ;
+        border-radius: 0 ;
+      }
     }
   }
 }
-
 
 .card-one {
   @extend %cardWrapper;
@@ -905,7 +921,6 @@
     max-width: toRem(408);
   }
 }
-
 
 .card-review {
   border-radius: toRem(26);
