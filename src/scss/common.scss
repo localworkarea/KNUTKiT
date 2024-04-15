@@ -453,6 +453,11 @@
     font-weight: 700;
     line-height: 1.2;
     color: $red;
+    a {
+      font-size: inherit;
+      text-underline-offset: toRem(6);
+      text-decoration-thickness: toRem(2);
+    }
   }
   p, ul li, ol li, a {
     @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
@@ -608,7 +613,8 @@
               content: '';
               background-image: url('../img/icons/arr-dwn.svg');
               background-size: contain;
-              width: toRem(16);
+              background-repeat: no-repeat;
+              min-width: toRem(16);
               height: toRem(16);
               filter: invert(0%) sepia(4%) saturate(7483%) hue-rotate(243deg) brightness(100%) contrast(106%);
               transition: transform .3s ease, opacity .3s ease;
@@ -722,7 +728,7 @@
     content: '';
     position: absolute;
     @include adaptiveValue("top", -12.5, -10,0,1920,1366.98);
-    @include adaptiveValue("left", 30, 16,0,1920,1366.98);
+    @include adaptiveValue("left", 18, 12,0,1920,1366.98);
     @include adaptiveValue("width", 25, 20,0,1920,1366.98);
     @include adaptiveValue("height", 25, 20,0,1920,1366.98);
     border-radius: toRem(6);
@@ -734,9 +740,7 @@
 .card-wrapper-three {
   display: grid;
   @include adaptiveValue("gap", 30, 12,0,1920,1366.98);
-  // &:not(:last-child) {
-    @include adaptiveValue("margin-bottom", 40, 30,0,1920,1366.98);
-  // }
+  @include adaptiveValue("margin-bottom", 40, 30,0,1920,1366.98);
   @media (min-width:$tablet){
     grid-template-columns: repeat(3, 1fr);
   }
@@ -745,6 +749,20 @@
   }
   @media (max-width:$mobileSmall){
      gap: toRem(20) !important; 
+  }
+}
+.card-wrapper-four {
+  display: grid;
+  @include adaptiveValue("gap", 18, 10,0,1920,1366.98);
+  @include adaptiveValue("margin-bottom", 40, 30,0,1920,1366.98);
+  @media (min-width:toEm(1200.98)){
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: toEm(1200.98)) and (min-width: $tablet){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width:$tablet) and (min-width:$mobileSmall){
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -808,17 +826,17 @@
         border-radius: 0;
       }
       @media (min-width:$mobileSmall){
-         aspect-ratio: 408/540; 
+         aspect-ratio: 408/500; 
       }
       @media (max-width:$mobileSmall){
-         aspect-ratio: 350/460; 
+         aspect-ratio: 350/420; 
       }
     }
   }
   // .card-person__footer
   &__footer {
     flex: 1;
-    @include adaptiveValue("padding", 30, 16,0,1920,1366.98);
+    @include adaptiveValue("padding", 20, 14,0,1920,1366.98);
     display: flex;
     flex-direction: column;
     row-gap: toRem(15);
@@ -828,7 +846,7 @@
   &__name {
     &:not(.article-styles) {
       font-weight: 700;
-      @include adaptiveValue("font-size", 22, 18,0,1920,1366.98);
+      @include adaptiveValue("font-size", 20, 16,0,1920,1366.98);
       margin: unset;
     }
   }
@@ -836,7 +854,7 @@
   &__position {
     &:not(.article-styles) {
       flex: 1;
-      @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+      @include adaptiveValue("font-size", 16, 14,0,1920,1366.98);
       margin: unset;
     }
   }
@@ -879,16 +897,17 @@
   // .card-one__img
   &__img {
     img {
-      aspect-ratio: 406/346;
+      aspect-ratio: 406/280;
     }
   }
   // .card-one__footer
   &__footer {
     position: relative;
     @extend %beforeQube;
-    @include adaptiveValue("padding-top", 44, 28,0,1920,1366.98);
-    @include adaptiveValue("padding-bottom", 44, 18,0,1920,1366.98);
-    @include adaptiveValue("padding-left", 30, 18);
+    // @include adaptiveValue("padding-top", 44, 28,0,1920,1366.98);
+    // @include adaptiveValue("padding-bottom", 44, 18,0,1920,1366.98);
+    // @include adaptiveValue("padding-left", 30, 18);
+    @include adaptiveValue("padding", 18, 14,0,1920,1366.98);
     @media (min-width:toEm(850.98)){
       padding-right: toRem(50);
     }
@@ -899,7 +918,7 @@
   // .card-one__title
   &__title {
     font-weight: 700;
-    @include adaptiveValue("font-size", 24, 20,0,1920,1366.98);
+    @include adaptiveValue("font-size", 20, 16,0,1920,1366.98);
     span {
       color: $red;
     }
@@ -931,8 +950,8 @@
     background-color: $gray;
     display: flex;
     align-items: center;
-    @include adaptiveValue("column-gap", 20, 14,0,1920,1366.98);
-    padding: toRem(18);
+    @include adaptiveValue("column-gap", 18, 14,0,1920,1366.98);
+    @include adaptiveValue("padding", 16, 14,0,1920,1366.98);
     position: relative;
     &::after {
       content: '';
@@ -970,18 +989,18 @@
     display: inline-block;
     font-style: normal;
     font-weight: 700;
-    @include adaptiveValue("font-size", 22, 18,2,1920,1366.98);
-    @include adaptiveValue("font-size", 18, 16,3,1366.98,480.98);
+    @include adaptiveValue("font-size", 20, 16,0,1920,1366.98);
+    // @include adaptiveValue("font-size", 16, 14,3,1366.98,480.98);
     margin-bottom: toRem(6);
   }
   // .card-review__time
   &__time {
     color:rgba(0, 0, 0, 0.3);
-    @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
+    @include adaptiveValue("font-size", 16, 14,0,1920,1366.98);
   }
   // .card-review__review
   &__review {
-    @include adaptiveValue("padding", 28, 18,0,1920,1366.98);
+    @include adaptiveValue("padding", 18, 14,0,1920,1366.98);
     @include adaptiveValue("font-size", 18, 16,0,1920,1366.98);
   }
 }

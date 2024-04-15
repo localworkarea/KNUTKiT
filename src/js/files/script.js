@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const subMenu = item.querySelector('.sub-menu');
             if (subMenu && window.innerWidth >= 50.061 * parseFloat(getComputedStyle(document.documentElement).fontSize)) {
                 subMenu.removeAttribute('hidden');
+                const link = item.querySelector('a');
+                const parentMenuItem = link.closest('.menu-item');
+                parentMenuItem.classList.add('_open');
             }
         });
     }
